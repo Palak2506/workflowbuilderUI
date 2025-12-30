@@ -19,7 +19,7 @@ export function useWorkflow() {
 
     let newNode;
 
-    // ✅ SPECIAL CASE: BRANCH node
+    
     if (type === "BRANCH") {
       newNode = {
         id: newId,
@@ -41,7 +41,6 @@ export function useWorkflow() {
 
     const parent = prev.nodes[parentId];
 
-    // ✅ If parent itself is a BRANCH → fill correct slot
     if (parent.type === "BRANCH") {
       const updatedChildren = parent.children.map((c) =>
         c.branch === branch && c.nodeId === null
@@ -62,7 +61,7 @@ export function useWorkflow() {
       };
     }
 
-    // ✅ Normal node behavior
+    
     return {
       ...prev,
       nodes: {
@@ -86,7 +85,7 @@ export function useWorkflow() {
     let parentId = null;
     let parentBranch = null;
 
-    // 1️⃣ Find parent and branch
+    
     for (const id in nodes) {
       for (const child of nodes[id].children) {
         if (child.nodeId === nodeId) {
@@ -103,7 +102,7 @@ export function useWorkflow() {
 
     let newParentChildren;
 
-    // 2️⃣ Branch parent → reset branch slot
+    
     if (parent.type === "BRANCH") {
       newParentChildren = parent.children.map((child) =>
         child.branch === parentBranch
@@ -111,12 +110,12 @@ export function useWorkflow() {
           : child
       );
     } 
-    // 3️⃣ Sequential parent → reconnect children
+   
     else {
       newParentChildren = deletedNode.children;
     }
 
-    // 4️⃣ Build new nodes object IMMUTABLY
+   
     const newNodes = {
       ...nodes,
       [parentId]: {
