@@ -145,8 +145,6 @@ const updateLabel = (nodeId, newLabel) => {
     }
   }));
 };
-
-
   return { workflow, addNode, deleteNode, updateLabel };
 
 }
