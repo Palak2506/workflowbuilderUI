@@ -4,13 +4,13 @@ A visual, interactive workflow builder built with **React** that allows users to
 
 This project was developed as a **Frontend Intern Take-Home Assignment** and focuses on data modeling, state management, and clean component architecture without using external UI or diagramming libraries.
 
----
 
-## 🚀 Live Demo
-👉 <add-your-vercel-link-here>
 
-## 📂 GitHub Repository
-👉 <add-your-github-repo-link-here>
+Live Demo
+<add-your-vercel-link-here>
+
+ GitHub Repository
+https://github.com/Palak2506/workflowbuilderUI
 
 ---
 
